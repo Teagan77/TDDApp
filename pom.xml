@@ -14,7 +14,8 @@
       <module>BuilderModule</module>
     <module>ClassesModule</module>
     <module>MainModule</module>
-    <module>DirectorModule</module>
+      <module>guiModule</module>
+
   </modules>
 
   <name>tdd-app</name>

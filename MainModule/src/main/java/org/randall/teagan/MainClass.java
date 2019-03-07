@@ -1,24 +1,37 @@
 package org.randall.teagan;
 
 /**
- * Teagan Raandall 3b 215095111
+ * Teagan Randall 3b 215095111
  *
  */
 public class MainClass
 {
     public static void main( String[] args ){
 
-        DefaultEmployeeBuilder defaultEmp = new DefaultEmployeeBuilder();
-        EmployeeBuilder builder = new EmployeeBuilder(defaultEmp);
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Windows".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(EmployeeBuilderGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(EmployeeBuilderGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(EmployeeBuilderGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(EmployeeBuilderGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }
 
-        builder.makeEmployee();
-
-        Employee firstEmployee = builder.getDefaultEmp();
-
-        System.out.println("Employee built:");
-        System.out.println("Employee ID: " + firstEmployee.getId());
-        System.out.println("Employee Name: " + firstEmployee.getName());
-        System.out.println("Employee Surname: " + firstEmployee.getSurname());
-        System.out.println("Employee Type: " + firstEmployee.getType());
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    EmployeeBuilderGUI gui = new EmployeeBuilderGUI();
+                    gui.setVisible(true);
+                    gui.setLocationRelativeTo(null);
+                }
+            });
+        }
     }
-}
+
