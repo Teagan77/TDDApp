@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="BuilderModule" />
         <module name="ClassesModule" />
+        <module name="GuiModule" />
         <module name="MainModule" />
       </profile>
     </annotationProcessing>
